@@ -1,0 +1,9 @@
+attempt,accuracy,sensitivity,specificity,AUC,n_features,wilcoxon_p_vs_row2b,permutation_p
+"Row 1: Original baseline (fixed 3 features, not re-derived per fold)",0.6207,0.5385,0.6875,0.6779,3,0.0455,0.032
+"Row 2: Corrected baseline (nested top-3 vs GROUP, per fold)",0.2414,0.3077,0.1875,0.1731,3,,0.834
+"Row 2b: Corrected baseline (nested top-3 vs AGE, per fold) -- TRUE baseline for Improvements 1-5",0.4828,0.5385,0.4375,0.4952,3,,
+"Improvement 1: Up to 5 features, threshold |rho|>0.3 (nested per fold)",0.4828,0.4615,0.5,0.3894,"<=5, varies",0.1025,
+Improvement 2: class_weight='balanced' (nested top-3 vs age),0.5172,0.6923,0.375,0.5481,3,0.2568,
+Improvement 3: C grid search via inner LOOCV (nested top-3 vs age),0.4483,0.4615,0.4375,0.4615,3,0.0588,
+Improvement 4: Decision threshold tuned via inner LOOCV (nested top-3 vs age),0.5862,0.8462,0.375,0.4952,3,0.1797,
+Improvement 5: class_weight='balanced' + threshold tuning combined (nested top-3 vs age),0.6207,0.9231,0.375,0.5481,3,0.1025,0.312

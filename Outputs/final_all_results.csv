@@ -1,0 +1,43 @@
+category,model_name,metric_1,metric_1_value,metric_2,metric_2_value,comparison_test,comparison_p_value,significant
+Classification (primary),Logistic Regression (binary young/old classification),accuracy,0.6207,AUC,0.6779,permutation_p,0.032,TRUE
+Regression model comparison,"Linear (3-feature, whole-sample, leaky)",MAE,12.2759,pearson_r,0.4514,wilcoxon_p_vs_baseline,,TRUE
+Regression model comparison,"gplearn (8-feature, whole-sample, leaky)",MAE,12.31,pearson_r,0.4,wilcoxon_p_vs_baseline,,TRUE
+Regression model comparison,Lasso (nested top-3),MAE,13.47,pearson_r,0.208,wilcoxon_p_vs_baseline,0.3808,FALSE
+Regression model comparison,Ridge (nested top-3),MAE,13.58,pearson_r,0.194,wilcoxon_p_vs_baseline,0.442,FALSE
+Regression model comparison,"gplearn (nested, 10-12 features)",MAE,13.7179,pearson_r,0.1598,wilcoxon_p_vs_baseline,0.3808,FALSE
+Regression model comparison,Linear (nested top-3),MAE,14.25,pearson_r,0.186,wilcoxon_p_vs_baseline,0.9152,FALSE
+Regression model comparison,Baseline (predict-mean),MAE,14.47,pearson_r,,wilcoxon_p_vs_baseline,,FALSE
+Regression model comparison,"gplearn (nested, forced top-3)",MAE,16.4464,pearson_r,-0.0244,wilcoxon_p_vs_baseline,,FALSE
+Regression model comparison,"Linear (8-feature, whole-sample, leaky)",MAE,,pearson_r,,wilcoxon_p_vs_baseline,,FALSE
+Regression model comparison,Gaussian Process Regressor (RBF kernel),MAE,14.1998,pearson_r,0.1723,wilcoxon_p_vs_baseline,0.6856,FALSE
+Regression model comparison,"Gaussian Process Regressor (Matern kernel, nu=1.5)",MAE,13.9207,pearson_r,0.2152,wilcoxon_p_vs_baseline,0.6089,FALSE
+Classification (primary),XGBoost,accuracy,0.3793,AUC,0.3558,permutation_p,0.584,FALSE
+Data augmentation (Ridge/Lasso/LR),Logistic Regression + noise,accuracy,0.6897,AUC,0.6731,wilcoxon_p_vs_no_augmentation,0.3173,FALSE
+Data augmentation (Ridge/Lasso/LR),"Ridge (fixed primary-3, augmented) + noise",MAE,11.9813,pearson_r,0.4555,wilcoxon_p_vs_no_augmentation,0.1056,FALSE
+Data augmentation (Ridge/Lasso/LR),"Lasso (fixed primary-3, augmented) + noise",MAE,12.227,pearson_r,0.4184,wilcoxon_p_vs_no_augmentation,0.0113,TRUE
+Data augmentation (Ridge/Lasso/LR),Logistic Regression + smote,accuracy,0.6552,AUC,0.6779,wilcoxon_p_vs_no_augmentation,0.5637,FALSE
+Data augmentation (Ridge/Lasso/LR),"Ridge (fixed primary-3, augmented) + smote",MAE,11.8609,pearson_r,0.4576,wilcoxon_p_vs_no_augmentation,0.0963,FALSE
+Data augmentation (Ridge/Lasso/LR),"Lasso (fixed primary-3, augmented) + smote",MAE,12.0806,pearson_r,0.4346,wilcoxon_p_vs_no_augmentation,0.3692,FALSE
+Data augmentation (Ridge/Lasso/LR),Logistic Regression + gmm,accuracy,0.6552,AUC,0.6827,wilcoxon_p_vs_no_augmentation,0.5637,FALSE
+Data augmentation (Ridge/Lasso/LR),"Ridge (fixed primary-3, augmented) + gmm",MAE,12.2143,pearson_r,0.4436,wilcoxon_p_vs_no_augmentation,0.0179,TRUE
+Data augmentation (Ridge/Lasso/LR),"Lasso (fixed primary-3, augmented) + gmm",MAE,12.4693,pearson_r,0.415,wilcoxon_p_vs_no_augmentation,0.1104,FALSE
+Data augmentation (GPR),GPR (A_RBF) + noise,MAE,12.6922,pearson_r,0.3313,wilcoxon_p_vs_baseline,0.1557,FALSE
+Data augmentation (GPR),GPR (A_RBF) + smote,MAE,15.6022,pearson_r,-0.109,wilcoxon_p_vs_baseline,0.1622,FALSE
+Data augmentation (GPR),GPR (A_RBF) + gmm,MAE,11.7256,pearson_r,0.4596,wilcoxon_p_vs_baseline,0.0041,TRUE
+Data augmentation (GPR),GPR (B_Matern) + noise,MAE,11.8287,pearson_r,0.4313,wilcoxon_p_vs_baseline,0.0157,TRUE
+Data augmentation (GPR),GPR (B_Matern) + smote,MAE,14.5221,pearson_r,0.111,wilcoxon_p_vs_baseline,0.5504,FALSE
+Data augmentation (GPR),GPR (B_Matern) + gmm,MAE,11.5995,pearson_r,0.4733,wilcoxon_p_vs_baseline,0.0023,TRUE
+Data augmentation (gplearn),gplearn (nested top-3) + noise,MAE,14.146,pearson_r,0.2813,wilcoxon_p_vs_baseline,0.1689,FALSE
+Data augmentation (gplearn),gplearn (nested top-3) + smote,MAE,14.5646,pearson_r,0.2654,wilcoxon_p_vs_baseline,0.5647,FALSE
+Data augmentation (gplearn),gplearn (nested top-3) + gmm,MAE,14.1349,pearson_r,0.2536,wilcoxon_p_vs_baseline,0.1104,FALSE
+LR improvement attempts,"Row 1: Original baseline (fixed 3 features, not re-derived per fold)",accuracy,0.6207,AUC,0.6779,permutation_p,0.032,FALSE
+LR improvement attempts,"Row 2: Corrected baseline (nested top-3 vs GROUP, per fold)",accuracy,0.2414,AUC,0.1731,permutation_p,0.834,FALSE
+LR improvement attempts,"Row 2b: Corrected baseline (nested top-3 vs AGE, per fold) -- TRUE baseline for Improvements 1-5",accuracy,0.4828,AUC,0.4952,wilcoxon_p_vs_row2b,,FALSE
+LR improvement attempts,"Improvement 1: Up to 5 features, threshold |rho|>0.3 (nested per fold)",accuracy,0.4828,AUC,0.3894,wilcoxon_p_vs_row2b,0.1025,FALSE
+LR improvement attempts,Improvement 2: class_weight='balanced' (nested top-3 vs age),accuracy,0.5172,AUC,0.5481,wilcoxon_p_vs_row2b,0.2568,FALSE
+LR improvement attempts,Improvement 3: C grid search via inner LOOCV (nested top-3 vs age),accuracy,0.4483,AUC,0.4615,wilcoxon_p_vs_row2b,0.0588,FALSE
+LR improvement attempts,Improvement 4: Decision threshold tuned via inner LOOCV (nested top-3 vs age),accuracy,0.5862,AUC,0.4952,wilcoxon_p_vs_row2b,0.1797,FALSE
+LR improvement attempts,Improvement 5: class_weight='balanced' + threshold tuning combined (nested top-3 vs age),accuracy,0.6207,AUC,0.5481,permutation_p,0.312,FALSE
+Group interaction model,"Likelihood-ratio test (complete-case, N=18)",LR_statistic,8.5898,df,3,chi2_p_value,0.0353,TRUE
+Group interaction model,"Marginal term: group:peak_roll_walkingincline (complete-case, N=18)",coefficient,0.543,95%_CI,"[-0.064, 1.150]",p_value,0.074,FALSE
+Group interaction model,"Marginal term: group:peak_roll_walkingincline (imputed, N=29, 20 MICE)",coefficient,0.316,95%_CI,"[-0.215, 0.847]",p_value,0.243,FALSE

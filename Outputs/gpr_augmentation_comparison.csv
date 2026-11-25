@@ -1,0 +1,7 @@
+kernel,method,mae,rmse,pearson_r,p_value,wilcoxon_p_vs_baseline,baseline_mae,confirmed_improvement,elapsed_s,bonferroni_alpha,bonferroni_significant
+A_RBF,noise,12.6922,14.2383,0.3313,0.0791,0.1557,14.1998,FALSE,11.3,0.00833,FALSE
+A_RBF,smote,15.6022,17.0714,-0.109,0.5737,0.1622,14.1998,FALSE,15.2,0.00833,FALSE
+A_RBF,gmm,11.7256,13.151,0.4596,0.0121,0.0041,14.1998,TRUE,11.4,0.00833,TRUE
+B_Matern,noise,11.8287,13.5319,0.4313,0.0195,0.0157,13.9207,TRUE,31.6,0.00833,FALSE
+B_Matern,smote,14.5221,15.9264,0.111,0.5666,0.5504,13.9207,FALSE,38.1,0.00833,FALSE
+B_Matern,gmm,11.5995,13.0373,0.4733,0.0095,0.0023,13.9207,TRUE,25,0.00833,TRUE

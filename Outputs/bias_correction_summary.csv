@@ -1,0 +1,5 @@
+model_name,MAE_before,r_before,bias_correlation,MAE_after_correction,r_after_correction
+Ridge,13.582,0.1941,-0.905,5.2933,0.9076
+Lasso,13.4703,0.208,-0.8978,5.5121,0.9023
+Linear,14.254,0.1862,-0.8262,7.3076,0.8385
+gplearn,13.7179,0.1598,-0.7403,9.8258,0.7607
