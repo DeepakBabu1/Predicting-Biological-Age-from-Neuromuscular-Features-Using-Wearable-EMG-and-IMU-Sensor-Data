@@ -1,5 +1,7 @@
 # Predicting Biological Age from Neuromuscular Features Using Wearable EMG and IMU Sensor Data
 
+📄 **Full thesis report:** [125100304_Thesis _report.pdf](125100304_Thesis%20_report.pdf) (MSc Data Science and Analytics, University College Cork)
+
 Can the way we move tell us how old we are? This project uses muscle activity (surface EMG) and foot motion (Xsens IMU) recordings from wearable sensors to try two things: predict a person's age, and classify people as younger or older adults.
 
 ## Study overview
@@ -19,7 +21,7 @@ Can the way we move tell us how old we are? This project uses muscle activity (s
 | Logistic Regression (3 features) | **62.1%** | **0.68** (95% CI 0.45 to 0.88) | **0.032** |
 | XGBoost (3 features) | 37.9% | 0.36 | 0.584 |
 
-Logistic regression separated the two age groups better than chance, and the result is statistically significant. XGBoost did worse than chance, which suggests it overfits on this small sample.
+Logistic regression separated the two age groups better than chance, and a permutation test confirmed it (p = 0.032). This is the strongest result in the thesis. It uses a fixed set of three features chosen on the whole sample, though. When the features are re-selected inside each fold, accuracy drops to 48.3% (AUC 0.50), which is chance level. XGBoost did worse than chance (training accuracy 79% vs 38% under LOOCV), which shows clear overfitting.
 
 ### Predicting age in years (nested LOOCV)
 
